@@ -1,0 +1,258 @@
+body,
+html {
+  margin: 0;
+  background-color: gray;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+#layout {
+  display: flex;
+  height: 100%;
+}
+
+/* ---------- video area ---------- */
+
+#videos {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  overflow-y: auto;
+}
+
+#status {
+  text-align: center;
+  color: white;
+  padding: 12px;
+}
+#status:empty {
+  display: none;
+}
+#status a {
+  color: white;
+}
+
+#subscribers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 8px;
+  padding: 8px;
+}
+
+#subscribers .subscriber {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #333;
+}
+
+.subscriber-id-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+#publisher {
+  position: absolute;
+  width: 320px;
+  height: 180px;
+  bottom: 10px;
+  left: 10px;
+  z-index: 100;
+  border: 3px solid white;
+  border-radius: 3px;
+  background-color: #333;
+}
+
+/* ---------- diagnostics panel ---------- */
+
+#diagnostics {
+  width: 400px;
+  flex-shrink: 0;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #f2f2f2;
+  padding: 12px;
+  box-sizing: border-box;
+  font-size: 13px;
+  color: #222;
+}
+
+#diagnostics h1 {
+  font-size: 18px;
+  margin: 0 0 8px;
+}
+
+#diagnostics h2 {
+  font-size: 14px;
+  margin: 0 0 8px;
+}
+
+#toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+#toolbar button {
+  font-size: 13px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+#toolbar label {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.card {
+  background-color: white;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.card.ended {
+  opacity: 0.6;
+}
+
+.card.publisher {
+  border-left: 4px solid #1f77b4;
+}
+
+.card.subscriber {
+  border-left: 4px solid #2ca02c;
+}
+
+table.metrics {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 8px;
+}
+
+table.metrics th {
+  text-align: left;
+  font-weight: normal;
+  color: #666;
+  padding: 2px 8px 2px 0;
+  white-space: nowrap;
+  width: 45%;
+}
+
+table.metrics td {
+  padding: 2px 0;
+  font-variant-numeric: tabular-nums;
+}
+
+/* threshold colours set by app.js */
+.ok {
+  color: #1a7f37;
+}
+.warn {
+  color: #b35900;
+  font-weight: bold;
+}
+.bad {
+  color: #c41e3a;
+  font-weight: bold;
+}
+
+.graph-label {
+  font-size: 11px;
+  color: #666;
+  margin-top: 6px;
+}
+
+.swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 4px 0 6px;
+  vertical-align: middle;
+}
+.swatch.video {
+  background-color: #1f77b4;
+}
+.swatch.audio {
+  background-color: #2ca02c;
+}
+.swatch.fps {
+  background-color: #d62728;
+}
+
+canvas.graph {
+  display: block;
+  width: 100%;
+  height: 80px;
+  border: 1px solid #ddd;
+}
+
+/* ---------- event log ---------- */
+
+#event-log {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 320px;
+  overflow-y: auto;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+}
+
+#event-log li {
+  padding: 2px 0;
+  border-bottom: 1px solid #eee;
+  color: #222;
+  font-weight: normal;
+}
+
+#event-log li.ok b {
+  color: #1a7f37;
+}
+#event-log li.warn b {
+  color: #b35900;
+}
+#event-log li.bad b {
+  color: #c41e3a;
+}
+
+#event-log time {
+  color: #888;
+}
+
+#event-log .source {
+  color: #555;
+}
+
+#event-log .detail {
+  color: #444;
+}
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 900px) {
+  #layout {
+    flex-direction: column;
+  }
+  #videos {
+    height: 50vh;
+    flex: none;
+  }
+  #diagnostics {
+    width: 100%;
+    height: auto;
+    flex: 1;
+  }
+  #publisher {
+    width: 160px;
+    height: 90px;
+  }
+}

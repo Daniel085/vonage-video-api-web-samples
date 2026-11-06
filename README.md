@@ -32,6 +32,14 @@ The code for this sample is found the following subdirectories:
 
 * Basic-Video-Zoom ([source](https://github.com/Vonage/vonage-video-api-web-samples/tree/main/Basic-Video-Zoom)) -- This sample shows you how to use a video transformer to zoom and center a publisher.
 
+* Bidirectional-Audio-Connector ([source](https://github.com/Vonage/vonage-video-api-web-samples/tree/main/Bidirectional-Audio-Connector)) -- This sample application demonstrates the Bi-directional Audio Connector feature. It adds an "echo" WebSocket server that receives an audio stream and publishes it back into the session.
+
+* Call-Diagnostics ([source](https://github.com/Vonage/vonage-video-api-web-samples/tree/main/Call-Diagnostics)) -- This sample application shows how to debug connection, CPU and video lag problems. It combines `getStats()`, `getRtcStatsReport()`, the `qualityScoreChanged` and `cpuPerformanceChanged` events and the video-disable events into one live panel with bitrate, packet loss, frame rate, jitter and round-trip time per stream, a timestamped event log, and a JSON export for bug reports.
+
+* Client-Observability ([source](https://github.com/Vonage/vonage-video-api-web-samples/tree/main/Client-Observability)) -- This sample application uses the sender-side statistics (`publishSenderStats`) in `Subscriber.getStats()` to show the maximum allocated bitrate and current bandwidth estimate for a subscriber's connection.
+
+* End-To-End-Media-Encryption ([source](https://github.com/Vonage/vonage-video-api-web-samples/tree/main/End-To-End-Media-Encryption)) -- This sample application shows how to connect to an end-to-end media encrypted session. End-to-End Media Encryption must be enabled as an add-on on your Vonage account.
+
 * In-Call-Monitoring ([source](https://github.com/Vonage/vonage-video-api-web-samples/tree/main/In-Call-Monitoring)) -- This sample application demonstrates the qualityScoreChanged (based on the subscriber's audio/video MOS) and cpuPerformanceChanged (real-time indication of device performance related to CPU pressure) events.
 
 * Live-Broadcast ([source](https://github.com/Vonage/vonage-video-api-web-samples/tree/main/Live-Broadcast)) -- This sample shows you how to do a live broadcast using WebRTC, HLS, and RTMP.
@@ -57,6 +65,8 @@ The code for this sample is found the following subdirectories:
 * Signaling ([source](https://github.com/Vonage/vonage-video-api-web-samples/tree/main/Signaling)) -- This sample shows you how to use the Vonage Video Signaling API to implement text chat.
 
 * Stream-Filter ([source](https://github.com/Vonage/vonage-video-api-web-samples/tree/main/Stream-Filter)) -- This sample shows you how to apply custom grayscale, sepia and invert filters.
+
+* Subscriber-Auto-Resolution ([source](https://github.com/Vonage/vonage-video-api-web-samples/tree/main/Subscriber-Auto-Resolution)) -- This sample application demonstrates the Subscriber Auto Resolution feature (`preferredResolution: 'auto'`), which optimizes the received video based on the size of the video element.
 
 See the README file in each of these subdirectories for application-specific notes.
 
